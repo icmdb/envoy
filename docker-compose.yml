@@ -1,0 +1,38 @@
+version: "3"
+networks:
+  envoy: 
+
+services:
+  envoy:
+    container_name: envoy
+    hostname: envoy
+    image: envoyproxy/envoy:v1.13.1
+    volumes:
+      - ./envoy.yaml:/etc/envoy/envoy.yaml
+    ports:
+      - 80:80
+    networks:
+      - envoy
+
+  nginx:
+    container_name: nginx
+    hostname: nginx
+    image: nginx
+    volumes:
+      - ./index.html:/usr/share/nginx/html/index.html
+    expose:
+      - 80
+    networks:
+      - envoy
+
+  websocketd:
+    container_name: websocketd
+    hostname: websocketd
+    image: icmdb/websocketd
+    expose:
+      - 8888
+    networks:
+      - envoy
+
+#  consul:
+

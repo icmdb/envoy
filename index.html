@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+    var ws = new WebSocket('ws://localhost/websocket');
+        ws.onmessage = function(event) {
+        console.log('Count is: ' + event.data);
+    };
+</script>
+</head>
+<body>
+    <h1>WebSocket Tester</h1>
+    <p></p>   
+</body>
+</html>
