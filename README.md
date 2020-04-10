@@ -1,6 +1,6 @@
 # envoy
 
-Pratices of envoy.
+Pratices and minimal demo of envoy that work with nginx and websocket.
 
 ## Quick Start
 
@@ -16,9 +16,9 @@ Then you can access:
 
 |Routes|URLs|
 |:-----|:---|
-|envoy -> nginx|http://localhost/|
-|envoy -> ennvoy-admin|http://localhost/envoy|
-|envoy -> websocketd|ws://localhost/websocket|
+|user -> nginix -> envoy -> web|http://localhost/|
+|user -> nginix -> envoy -> ennvoy-admin|http://localhost/envoy|
+|user -> nginix -> envoy -> websocketd|ws://localhost/websocket|
 
 ## Reference
 
